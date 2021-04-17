@@ -7,130 +7,42 @@
     <title>Homework 22</title>
 </head>
 <body>
-    <h1>15 string and array functions</h1>
     <?php
-    //addcslashes ( string $string , string $characters ) : string
-    $string = "This is a string";
-    $string2 = "String";
-    echo(addcslashes($string, "s"));
+
+    function voidPrint(){
+        echo "This is a string";
+    }
+    voidPrint();
+    echo "<br>";
+    function one($x)  {
+        echo $x;
+    }
+    one("This is a string");
+    echo "<br>";
+    function multiply($x, $y) {
+        echo $x * $y;
+    }
+    multiply(5,8);
+    echo "<br>";
+    function returnArr($a, $b, $c){
+        
+        echo $a, $b, $c;
+    }
+    returnArr(5,3 ,2);
     echo "<br>";
 
-    //lcfirst
-    echo(lcfirst($string));
+    function calculate($x, $y) {
+        echo $x * $y;
+    }
+    calculate(6,6);
     echo "<br>";
-
-    //sha1
-    echo(sha1($string));
-    echo "<br>";
-
-    //str_repeat
-    echo (str_repeat($string,2));
-    echo "<br>";
-
-    //strrev
-    echo (strrev($string));
-    echo "<br>";
-
-    //ucfirst
-    echo(ucfirst($string));
-    echo "<br>";
-
-    //strlen
-    echo (strlen($string));
-    echo "<br>";
-
-    //strpos
-    echo (strpos($string, "is"));
-    echo "<br>";
-
-    //str_word_count
-
-    echo (str_word_count($string));
-    echo "<br>";
-
-    //str_split
-    print_r(str_split($string2));
-    echo "<br>";
-
-
-
-    //strchr
-    echo (strchr($string, "k"));
-    echo "<br>";
-
-    //str_shuffle
-    echo (str_shuffle($string));
-    echo "<br>";
-
-
-
+    function iterate($x){
+        for ($i = 0; $i<$x; $i++){
+            echo "the variable " . $x . " is printed out " . $x . " times" . "<br>";
+        }
+    }
+    iterate(6);
     ?>
-    <br>
-    <br>
-    <h1>Array Functions</h1>
-    <?php
-    $array = ["keychain", "rims", "hood", "brother", "pipe", "memes", "obese" , "hood"];
-    $array2 = [
-        "name" => "Darko",
-        "Age" => "18",
-        "City" => "Skopje",
-        "Food" => "yes",
-        "Key" => "value",
-        "equal" => "values",
-        "as" => "previous"
-
-    ];
-    //arr_reverse
-    print_r(array_reverse($array));
-    echo "<br>";
     
-    //arr_flip
-    print_r(array_flip($array));
-    echo "<br>";
-
-    //arr_key_first
-    print_r(array_key_first($array));
-    echo "<br>";
-
-    //arr_key_last
-    print_r(array_key_last($array));
-    echo "<br>";
-
-    //arr_pop
-    print_r(array_pop($array));
-    echo "<br>";
-
-    //arr_slicr
-    print_r(array_slice($array, 3));
-    echo "<br>";
-
-    //arr_values
-    print_r(array_values($array));
-    echo "<br>";
-
-    //key
-    print_r(key($array));
-    echo "<br>";
-
-    //sizeof
-    print_r(sizeof($array));
-    echo "<br>";
-
-    //shuff;e
-    print_r(shuffle($array));
-    echo "<br>";
-
-    //rsort
-    print_r(rsort($array));
-    echo "<br>";
-
-    print_r(array_diff_key($array, $array2));
-    echo "<br>";
-
-    print_r(array_keys($array2));
-    echo "<br>";
-
-    print_r(array_unique($array));
-    ?>
 </body>
 </html>
