@@ -36,6 +36,11 @@
     }
     calculate(6,6);
     echo "<br>";
+
+    function printArray($a, $b, $c){
+        echo "<li>" . $a . "</li>" . "<li>" . $b . "</li>" . "<li>" . $c . "</li>"
+    }
+    printArray(array('chess', 'work', 'red'));
     function iterate($x){
         for ($i = 0; $i<$x; $i++){
             echo "the variable " . $x . " is printed out " . $x . " times" . "<br>";
