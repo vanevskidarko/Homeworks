@@ -1,44 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+$content = 'content';
+$class = 'paragraph';
 
-<body>
-<h1>the get method</h1>
-    <form action="home.html" method="get">
-        <label for="user">Username</label>
-        <input type="text" name="user" id="">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="">
-        <input type="submit" value="submit">
-    </form>
+echo '<p class="' . $class . '">' . $content . '</p>';
+echo '<br>';
+echo '<br>';
+function outputParagraph($class, $content)
+{
+    echo '<p class="' . $class . '">' . $content . '</p>';
+}
+outputParagraph('someclass', 'lorem15');
+
+echo '<br>';
+echo '<br>';
+
+$arr = [
+    'username' => 'username',
+    'password' => 'password',
+    'email' => 'email',
+];
+
+?>
+<form>
+    <input name="<?php echo $arr['username']; ?>">
+    <input name="<?php echo $arr['password']; ?>">
+    <input name="<?php echo $arr['email']; ?>">
+</form>
+
+<form>
     <?php
-    if(isset($_GET['submit'])){
-        $un = $_GET['username'];
-        $pw = $_GET['password'];
-        if ($un=='username' && $pw=='password'){
-            header("location:home.html");
-        }
+    foreach ($arr as $v) {
+        echo '<input name ="' . $v . '">';
     }
+    ?>
+</form>
+
+<?php
+
+function createInput($type, $name, $value, $id, $label)
+{
+
+    echo '<input type="' . $type . '"name="' . $name . '" value="' . $value . '"id ="' . $id . '" label="' . $label . '">';
+}
 ?>
 
-
-<h1>the post method</h1>
-<form action="home.html" method="post">
-        <label for="user">Username</label>
-        <input type="text" name="user" id="">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="">
-        <input type="submit" value="submit">
-    </form>
+<form>
     <?php
-    include('post.php');
-    ?>
-</body>
+    createInput('text', 'false', 'id', 'label', 'name') ?>
+</form>
+<?php
+session_start();
+?>
+<form action="process.php" method="POST">
+    <label for="username"><input type="text" name="username"></label>
+    <label for="password"><input type="password" name="password"></label>
+    <input type="submit" value="submit" name="submit">
+</form>
 
-</html>
+<?php
+if (isset($_SESSION['success']) && !empty($_SESSION['success'])) {
+    echo $_SESSION['success'];
+}
+if (isset($_SESSION['error']) && strlen(($_SESSION['error'])) < 6) {
+    echo $_SESSION['error'];
+}
+if (isset($_SESSION['error']) && empty($_SESSION['error'])) {
+    echo $_SESSION['error'];
+}
+session_destroy();
+?>
+<br>
+<br>
+<br>
+<br>
+<br>
+<?php
+session_start();
+?>
+<form action="process2.php" method="$_GET">
+    <label for="username"><input type="text" name="username"></label>
+    <label for="password"><input type="password" name="password"></label>
+    <input type="submit" value="submit" name="submit">
+</form>
+
+<?php
+if (isset($_SESSION['success']) && !empty($_SESSION['success'])) {
+    echo $_SESSION['success'];
+}
+if (isset($_SESSION['error']) && strlen(($_SESSION['error'])) < 6) {
+    echo $_SESSION['error'];
+}
+if (isset($_SESSION['error']) && empty($_SESSION['error'])) {
+    echo $_SESSION['error'];
+}
+session_destroy();
+?>
