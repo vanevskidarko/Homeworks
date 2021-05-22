@@ -45,12 +45,18 @@ $multiCities= [
 <th>
 <?php
 // echo  here first row of $multiCity
-for($i = 0; $i<2; $i++){
+// Darko ne sum siguren sto sakase da napravis tuka, izgleda komplicirano
+/*for($i = 0; $i<2; $i++){
     foreach($multiCities[$i] as $key => $firstRow){
 
         echo $key. '<th>';
 }
+*/
 
+// ednostavno resenie
+foreach ($multiCity[0] as $key => $value) {
+    echo "<th>" . $key . "</th>";
+}
 ?>
 </tr>
 </thead>
