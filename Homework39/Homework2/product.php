@@ -37,6 +37,6 @@ class Product
     function __toString()
     {
         // TODO: Implement __toString() method.
-        return "Images " . $this->getImage();
+        return "Images " . $this->getImgHtml();
     }
 }
