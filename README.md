@@ -7,7 +7,7 @@
 
 # My portfolio [link](https://github.com/vanevskidarko/resume)
 ## Course: [Fullstack developer PHP](https://codeacademy.mk/php-academy)
-Code Academy course Fullstack developer - March 2018: All tasks with their solutions.
+Code Academy course Fullstack developer - February 2021: All tasks with their solutions.
 
 ## Course content:
 - HTML
