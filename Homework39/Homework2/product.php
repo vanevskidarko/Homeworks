@@ -10,6 +10,8 @@ class Product
     public $images = [];
     public $sizes = [];
 
+
+
     function setImages($image)
     {
         array_push($this->images, $image);
@@ -29,7 +31,7 @@ class Product
     {
         $allImg = "";
         foreach ($this->getImage() as $image) {
-            $allImg .= "<img src='" . $image . "'>";
+            $allImg .= "<img src='" . $image . "'style:'width100px;'>";
         }
         return $allImg;
     }
@@ -37,6 +39,6 @@ class Product
     function __toString()
     {
         // TODO: Implement __toString() method.
-        return "Images " . $this->getImage();
+        return "Images " . $this->getImgHtml();
     }
 }
